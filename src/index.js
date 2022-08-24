@@ -16,6 +16,15 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 
 app.use('/', route);
 
+app.use(
+    function(req , res , next){
+        const date = moment().format('DD-MM-YYYY, HH:MM:SS')
+        const ip = req.ip
+        const url = req.originalUrl
+        console.log(date, " , " ,ip, ", ", url)
+        next()
+    }
+)
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
