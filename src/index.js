@@ -21,7 +21,7 @@ app.use(
         const date = moment().format('DD-MM-YYYY, HH:MM:SS')
         const ip = req.ip
         const url = req.originalUrl
-        console.log(date, " , " ,ip, ", ", url)
+        console.log(date, "  " ,ip, " ", url)
         next()
     }
 )
