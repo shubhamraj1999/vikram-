@@ -28,6 +28,8 @@ router.post("/users", commonMiddleware.validateHeader, userController.createUser
 router.post("/orders",commonMiddleware.validateHeader, orderController.newOrder)
 
 
+module.exports = router;
+
 // router.post("/createBook", BookController.createBook  )
 // router.post("/createBook", BookController.createBook  )
 // router.post("/createBook", BookController.createBook  )
@@ -76,4 +78,3 @@ router.post("/orders",commonMiddleware.validateHeader, orderController.newOrder)
 
 
 
-module.exports = router;
