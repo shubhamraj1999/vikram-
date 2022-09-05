@@ -21,9 +21,27 @@ mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzot
 //   }
 //   );
 
-app.use('/', route);
+app.use('/', route);//
 
+app.use(
+    function (req, res, next) {
+         let validity = req.body.isAvailable
+        if (validity== "true") {
+            next()
+        }
+        else ("you are not authorised")
+    }
+)
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
 });
+
+
+
+
+// let array = [[1,2,3,4],[5,6,7,8]]
+// let store = array.reduce(function(a,b){
+    
+// })
+

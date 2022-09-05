@@ -28,7 +28,7 @@ let editMeme = async function (req, res) {
         let pass = req.query.password
 
         var options = {
-            method: "post",
+            method: "post",  // this line is optional 
             url: `https://api.imgflip.com/caption_image?template_id=${template}&text0=${firstText}&text1=${secondText}&username=${userName}&password=${pass}`
         }
         let result = await axios(options)
